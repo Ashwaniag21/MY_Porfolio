@@ -261,7 +261,7 @@
 
             </div>
 
-            <form id="form" onsubmit="Mail(); reset(); return false;">
+            <form id="form" onsubmit="sendEmail(); reset(); return false;">
 
                 <input type="text" placeholder="name" class="box" id="name" name="name">
                 <input type="email" placeholder="email" class="box" id="email" name="email">
@@ -282,17 +282,12 @@
     <!-- contact recive script start -->
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
-        function Mail() {
-
-            let name = document.getElementById("name").value;
-            let email = document.getElementById("email").value;
-            let number = document.getElementById("number").value;
-            let message = document.getElementById("message").value;
-
+        function sendEmail() {
 
             Email.send({
-
-                SecureToken: "ebed19f9-f5d3-4c48-a468-ec6063be1469",
+                Host: "smtp.gmail.com",
+                Username: "ashwaniag21@gmail.com",
+                Password: "Rajguru@2002",
                 To: 'rajgurulalu2002@gmail.com',
                 From: document.getElementById("email").value,
                 Subject: "new contact Enquiry form portfolio ",
